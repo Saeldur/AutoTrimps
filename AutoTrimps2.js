@@ -82,8 +82,12 @@ function gameTimeout() {
   while (dif >= tick) {
     var p = game.global.totalPortals;
     runGameLoop(true, now);
-    if (game.global.totalPortals > p) game.global.start -= dif; //Support for when autotrimps portals during catchup.
+    if (game.global.totalPortals > p) {
+      game.global.start -= dif; //Support for when autotrimps portals during catchup.
+      game.global.portalTime -= dif;
+    }
     dif -= tick;
+    game.global.time += tick;
     game.global.time += tick;
     ctrlPressed = false;
   }

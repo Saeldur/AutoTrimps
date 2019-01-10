@@ -88,7 +88,6 @@ function gameTimeout() {
     }
     dif -= tick;
     game.global.time += tick;
-    game.global.time += tick;
     ctrlPressed = false;
   }
   runGameLoop(null, now);

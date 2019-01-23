@@ -6,15 +6,15 @@ MODULES["buildings"].storageLowlvlCutoff2 = 0.5;
 var housingList = ['Hut', 'House', 'Mansion', 'Hotel', 'Resort', 'Gateway', 'Collector', 'Warpstation'];
 
 function safeBuyBuilding(building) {
+    if (game.buildings[building].locked)
+        return false;
     if (isBuildingInQueue(building)) {
   	  var now = new Date().getTime();
       var tick = 1000 / game.settings.speed;
       var dif = (now - game.global.start) - game.global.time;
-      if (game.global.buildingsQueue.filter(o => o.includes(building)).length > (dif / tick) | 0)
+      if (game.global.buildingsQueue.filter(o => o.includes(building)).length > ((dif / tick) | 0) * (game.talents.deciBuild.purchased * 8 + game.talents.doubleBuild.purchased + 1))
         return false;
     }
-    if (game.buildings[building].locked)
-        return false;
     var oldBuy = preBuy2();
 
   if (game.talents.deciBuild.purchased) {

@@ -7,6 +7,7 @@
 // @author       zininzinin, spindrjr, Ishkaru, genBTC, Zeker0, Saeldur
 // @include      *trimps.github.io*
 // @include      *kongregate.com/games/GreenSatellite/trimps
+// @include      *trimpstesting411.netlify.com*
 // @connect      *Saeldur.github.io/AutoTrimps*
 // @connect      *trimps.github.io*
 // @connect      self
